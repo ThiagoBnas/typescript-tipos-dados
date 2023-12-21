@@ -39,4 +39,4 @@ let colecao:{nome: string; idade: number; status: boolean}[] = lista.filter(elem
 return colecao;
 }
 
-console.log(filtroProNome(usuarios,'Jo'))
+console.log(filtroProNome(usuarios,'i'))
