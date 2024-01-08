@@ -31,12 +31,21 @@ const usuarios: { nome: string; idade: number; status: boolean }[] = [
 	},
 ];
 
-const filtroProNome = (lista: {nome: string; idade: number; status: boolean}[],	nomeUsuario: string): { nome: string; idade: number; status: boolean }[] => {
-let colecao:{nome: string; idade: number; status: boolean}[] = lista.filter(elemento=>{
-	return elemento.nome.includes(nomeUsuario);
+const filtroProNome = (
+	lista: {
+		nome: string, 
+		idade: number, 
+		status: boolean
+	}[],	
+	nomeUsuario: string
+	): { nome: string, 
+		idade: number, 
+		status: boolean }[] => {
+let colecao = lista.filter(elemento=>{
+	return elemento.nome.toLowerCase().includes(nomeUsuario.toLowerCase());
 });
 
 return colecao;
 }
 
-console.log(filtroProNome(usuarios,'i'))
+console.log(filtroProNome(usuarios,'jo'))

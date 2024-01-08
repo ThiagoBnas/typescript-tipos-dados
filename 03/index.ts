@@ -1,13 +1,17 @@
-let numeros: number[] = [2]
+let numeros: number[] = [2,3,1,4]
 
-const tabuadaMultiplicacao = (lista:number[]) =>{
-
-  let tabuada = lista.map(numero =>{
+const tabuadaMultiplicacao = (lista:number[]): string =>{
+  let resultado:string = '';
+  for (const numero of lista) {
     for (let i = 0; i <= 10 ; i++) {
-      let casa:string = String(numero).concat(' x ',String(i),' = ',String(numero*i));
-      console.log(casa);
-      if(i >= 10){console.log('---------------')}
+      resultado += `${numero} x ${i} = ${numero*i} \n`;
+  
+      if(i === 10){
+        resultado += '--------------- \n'
       }
-  })
+    }
+  }
+  return resultado;
 }
-tabuadaMultiplicacao(numeros);
+
+console.log(tabuadaMultiplicacao(numeros));
